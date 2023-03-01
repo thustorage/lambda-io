@@ -30,3 +30,12 @@ month = feb,
 We are constructing the repository step by step to present it in a better way.
 We plan to open source some propotype code in the future.
 Please focus on the repository for updates.
+
+# Building and Running
+The repository serves as more a reference for experts, rather than an out-of-the-box codebase for beginners.
+We have to admit that it is quite hard to build and run the code directly, because the code is for specific software and hardware environment.
+
+For example, the NVMe controller (nvme-ctl) is the userspace code for PetaLinux on Daisy/DaisyPlus OpenSSD.
+To run the code, one must configure the PetaLinux along with an FPGA image on Daisy/DaisyPlus OpenSSD.
+
+If you have further questions and interests, please feel free to propose an issue or contact me via email (zheyang.zy@outlook.com) for detailed steps.
