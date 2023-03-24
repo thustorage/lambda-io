@@ -31,6 +31,15 @@ We are constructing the repository step by step to present it in a better way.
 We plan to open source some propotype code in the future.
 Please focus on the repository for updates.
 
+A brief introduction of uploaded components.
+- `ebpf`: eBPF/sBPF computational functions.
+- **`host-eval`**: Host-side evaluation code. It shows how to use λ-IO in an application, including the programming model and APIs.
+- `kmod`: Kernel module of λ-IO dispatcher and helper syscalls.
+- `libbpf`: The library to load an eBPF/sBPF program.
+- `linux-lio`: Modified files in the linux source code. We tried to implement components as a kernel module (`kmod`), but some still need to be implemented in the Linux source code and compiled into the kernel image.
+- `nvme-ctl`: The firmware of the NVMe controller on the ARM CPUs. You need more FPGA configurations to run it on Daisy/DaisyPlus OpenSSD.
+- `uebpf-rt`: Userspace eBPF/sBPF runtime for x86-64 and aarch64 (ARM64).
+
 # Building and Running
 The repository serves as more a reference for experts, rather than an out-of-the-box codebase for beginners.
 We have to admit that it is quite hard to build and run the code directly, because the code is for specific software and hardware environment.
