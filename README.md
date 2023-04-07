@@ -49,3 +49,29 @@ To run the code, one must configure the PetaLinux along with an FPGA image on Da
 
 If you have further questions and interests, please feel free to propose an issue or contact me via email (zheyang.zy AT outlook.com) for detailed steps.
 You can find my github at [yzim](https://github.com/yzim/).
+
+## λ-IO Kernel
+Running λ-IO kernel does not need a specific hardware platform.
+You can do it in the following steps.
+
+1. Compile the kernel source code and boot with the kernel. 
+Download the Linux source code and modify it using `linux-lio`.
+`linux-lio` is based on Ubuntu 20.04 LTS, Linux 5.10.21 (official apt package by Ubuntu).
+We recommend you try the same OS and kernel.
+If your OS and kernel differ from our settings, you need to fix the compatibility.
+2. Compile the kernel module `lio-helper` in `kmod`. 
+To run λ-IO in the kernel mode only, you can delete all the code of functions `do_write_auto`, `do_write_dev`, `do_read_auto`, `do_auto`, and `do_dev` in `proc.c`, along with the variables.
+3. Compile `libbpf`.
+4. Write and compile your computational logic with files in `ebpf/src/kern` as examples.
+Therefore, you can get an eBPF program `*.o` to load.
+5. Write and compile your application with files in `host-eval/src/eval-one.cc` as an example.
+    1) load the eBPF program using `kebpf_load_file(...)`.
+    2) open the `lio-helper` by `lioh_fd = open("/proc/lio-helper")`.
+    3) set the loaded eBPF program using `ioctl(lioh_fd, LIOH_IOCTL_SET_KBPF, ...)`.
+    4) set the scheduling mode to kernel-only using `ioctl(lioh_fd, LIOH_IOCTL_SET_SCHED, K)`.
+    5) set the backend file using `set_back_file(lioh_fd, ...)`.
+    6) trigger λ-read/λ-write using `pread(lioh_fd, ...)` or `pwrite(lioh_fd, ...)`.
+
+We provide the compiling `Makefile` or `CMakeLists.txt` in `kmod`, `libbpf`, `ebpf`, and `host-eval`.
+To compile them for the host kernel, set option `ONHOST` to `ON` in all the `CMakeLists.txt` files (`OFF` to cross-compile for the device-side ARM).
+
