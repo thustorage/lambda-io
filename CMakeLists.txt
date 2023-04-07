@@ -28,8 +28,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 add_subdirectory(libbpf)
 add_subdirectory(uebpf-rt)
 add_subdirectory(ebpf)
-add_subdirectory(kmod)
-add_subdirectory(fs-map)
+# add_subdirectory(kmod) # to compile it, you should use the `Makefile` in the directory.
+# add_subdirectory(fs-map)
 
 if(ONHOST)
     add_subdirectory(host-eval)
