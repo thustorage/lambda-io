@@ -40,6 +40,9 @@ A brief introduction of uploaded components.
 - `nvme-ctl`: The firmware of the NVMe controller on the ARM CPUs. You need more FPGA configurations to run it on Daisy/DaisyPlus OpenSSD.
 - `uebpf-rt`: Userspace eBPF/sBPF runtime for x86-64 and aarch64 (ARM64).
 
+**Upcoming updates:**
+I am organizing resources of Vivado project files and plan to upload them in the near future.
+
 # Building and Running
 The repository serves as more a reference for experts, rather than an out-of-the-box codebase for beginners.
 We have to admit that it is quite hard to build and run the code directly, because the code is for specific software and hardware environment.
