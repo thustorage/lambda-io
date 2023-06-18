@@ -32,6 +32,7 @@ We plan to open source some propotype code in the future.
 Please focus on the repository for updates.
 
 A brief introduction of uploaded components.
+- `device-hardware`: the FPGA and Petalinux source code for DiasyPlus OpenSSD (still under construction).
 - `ebpf`: eBPF/sBPF computational functions.
 - **`host-eval`**: Host-side evaluation code. It shows how to use λ-IO in an application, including the programming model and APIs.
 - `kmod`: Kernel module of λ-IO dispatcher and helper syscalls.
