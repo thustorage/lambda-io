@@ -32,14 +32,14 @@ We plan to open source some propotype code in the future.
 Please focus on the repository for updates.
 
 Here is a brief introduction to uploaded components.
-- `device-hardware`: the PL(FPGA) and PS(ARM) code and binary files for Daisy/DaisyPlus OpenSSD.
-- `ebpf`: eBPF/sBPF computational functions.
-- **`host-eval`**: Host-side evaluation code. It shows how to use λ-IO in an application, including the programming model and APIs.
-- `kmod`: Kernel module of λ-IO dispatcher and helper syscalls.
-- `libbpf`: The library to load an eBPF/sBPF program.
-- `linux-lio`: Modified files in the linux source code. We tried to implement components as a kernel module (`kmod`), but some still need to be implemented in the Linux source code and compiled into the kernel image.
-- `nvme-ctl`: The firmware of the NVMe controller on the ARM CPUs. Before running the controller, you need to configure the PL(FPGA) and the Linux on PS(ARM) using `device-hardware`.
-- `uebpf-rt`: Userspace eBPF/sBPF runtime for x86-64 and aarch64 (ARM64).
+- `device-hardware` (device). PL(FPGA) and PS(ARM) code and binary files for Daisy/DaisyPlus OpenSSD.
+- `ebpf` (host/device): eBPF/sBPF computational functions.
+- **`host-eval`** (host): Evaluation code. It shows how to use λ-IO in an application, including the programming model and APIs.
+- `kmod` (host): the kernel module of λ-IO dispatcher and helper syscalls.
+- `libbpf` (host/device): The library to load an eBPF/sBPF program.
+- `linux-lio` (host): Modified files in the Linux source code tree. We tried to implement components as a kernel module (`kmod`), but some still need to be implemented in the Linux source tree code and compiled into the kernel image.
+- `nvme-ctl` (device): The firmware of the NVMe controller on the ARM CPUs. Before running the controller, you need to configure the PL(FPGA) and the Linux on PS(ARM) using `device-hardware`.
+- `uebpf-rt` (device): Userspace eBPF/sBPF runtime for x86-64 and aarch64 (ARM). λ-IO only uses `uebpf-rt` on the device. We also port the runtime to the x86-64 userspace, for the research purpose.
 
 # Building and Running
 The repository serves as more a reference for experts, rather than an out-of-the-box codebase for beginners.
