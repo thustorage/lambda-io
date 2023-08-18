@@ -78,3 +78,8 @@ We provide the compiling `Makefile` or `CMakeLists.txt` in `kmod`, `libbpf`, `eb
 We also provide a root `CMakelists.txt` in the root directory.
 I recommend you to use the root `CMakelists.txt` because it compiles all the components and fixes issues such as linking the compiled library.
 To compile them for the host, set option `ONHOST` to `ON` in all the `CMakeLists.txt` files (`OFF` to cross-compile for the device-side ARM).
+
+## NVMe Controller
+If what you need is just an NVMe controller without λ-IO components, you can try `device-hardware` and `nvme-ctl`.
+We provide a usable NVMe controller, which is ported and refactored from [OpenExpress](https://openexpress.camelab.org/) for Daisy/DaisyPlus OpenSSD.
+It is much more efficient than the [official one](https://github.com/CRZ-Technology/OpenSSD-OpenChannelSSD) according to our experiments.
