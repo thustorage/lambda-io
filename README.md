@@ -6,8 +6,8 @@ This is the open-source repository for our paper
 
 
 ## Cite our paper
-```
-@inproceedings {285746,
+```bib
+@inproceedings {fast23-lambda-io,
 author = {Zhe Yang and Youyou Lu and Xiaojian Liao and Youmin Chen and Junru Li and Siyu He and Jiwu Shu},
 title = {{λ-IO}: A Unified {IO} Stack for Computational Storage},
 booktitle = {21st USENIX Conference on File and Storage Technologies (FAST 23)},
@@ -43,12 +43,12 @@ Here is a brief introduction to uploaded components.
 
 # Building and Running
 The repository serves as more a reference for experts, rather than an out-of-the-box codebase for beginners.
-We have to admit that it is quite hard to build and run the code directly, because the code is for specific software and hardware environment.
+It is not straightforward to build and run the code directly, because the code is for specific software and hardware environment.
 
 For example, the NVMe controller (nvme-ctl) is the userspace code for PetaLinux on Daisy/DaisyPlus OpenSSD.
 To run the code, one must configure the PetaLinux along with an FPGA image on Daisy/DaisyPlus OpenSSD.
 
-If you have further questions and interests, please feel free to propose an issue or contact me via email (zheyang.zy AT outlook.com) for detailed steps.
+If you have further questions and interests, please feel free to propose an issue or contact me via email yangzhe.ac AT outlook.com) for detailed steps.
 You can find my github at [yzim](https://github.com/yzim/).
 
 ## λ-IO Kernel
